@@ -1,0 +1,5 @@
+numpy==1.26.4
+scipy==1.13.1
+tensorly==0.9.0
+scikit-image==0.24.0
+# Install a PyTorch build appropriate for your CPU/CUDA first. Verified: torch 2.1.0+cu121.

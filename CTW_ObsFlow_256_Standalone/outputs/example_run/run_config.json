@@ -1,0 +1,106 @@
+{
+  "args": {
+    "data": "example/cave.mat",
+    "srf": "example/srf_est.mat",
+    "model_dir": "artifacts",
+    "metadata": "",
+    "adapter_checkpoint": "",
+    "base_checkpoint": "",
+    "initial_factors": "artifacts/shared_initial_factors.pt",
+    "out_dir": "outputs/example_run",
+    "device": "cuda:0",
+    "seed": 0,
+    "smoke": false,
+    "crop": 0,
+    "scale": 4,
+    "ring_ranks": "12,12,12",
+    "core_ranks": "3,3,3",
+    "sampler": "flow",
+    "flow_checkpoint": "artifacts/flow_obscond_jointloss_light.pt",
+    "flow_steps": 20,
+    "flow_start": 0.85,
+    "t_start": 600,
+    "ddim_steps": 100,
+    "init_projection_steps": 100,
+    "block_size": 16,
+    "lambda_msi": 1.0,
+    "projection_lr": 0.002,
+    "factor_lr": 0.002,
+    "factor_interval": 2,
+    "factor_start_t": 400,
+    "factor_anchor": 0.001,
+    "final_factor_steps": 200,
+    "final_joint_steps": 300,
+    "rho_core": 0.01,
+    "rho_decay": 0.998,
+    "normalize_guidance": true,
+    "coarse_to_fine_guidance": false,
+    "coarse_to_fine_core_only": false,
+    "coarse_lowpass_kernel": 5,
+    "coarse_transition_start": 0.4,
+    "coarse_transition_end": 0.75,
+    "coarse_full_loss_weight": 0.2,
+    "coarse_detail_gradient_weight": 0.25,
+    "joint_core_g3": true,
+    "rho_g3": 5e-05,
+    "g3_anchor": 0.1,
+    "g3_max_relative_change": 0.25,
+    "core_prior_weight": 0.1,
+    "g3_prior_weight": 0.1,
+    "structure_ssim_weight": 0.0,
+    "structure_gradient_weight": 0.0,
+    "structure_sam_weight": 0.0,
+    "structure_last_steps": 0,
+    "factor_alternating_updates": false,
+    "g2_gate_enabled": true,
+    "g2_gate_dim": 16,
+    "g2_gate_steps": 50,
+    "g2_gate_anchor": 0.1,
+    "g2_gate_scales": "0,0.25,0.5,0.75,1",
+    "g2_gate_holdout_period": 20,
+    "d_model": 64,
+    "num_heads": 4,
+    "tokens_per_factor": 4,
+    "gate_init": 0.0,
+    "interaction_tokens": true,
+    "adapter_tta": false,
+    "adapter_tta_steps": 20,
+    "adapter_tta_lr": 0.0001,
+    "adapter_tta_prior": 0.1
+  },
+  "metrics": {
+    "rmse": 0.006709713738562786,
+    "psnr": 43.46592016119405,
+    "sam": 4.198423044249321,
+    "ergas": 1.1464224783201573,
+    "ssim": 0.9784759168081225,
+    "uiqi": 0.9987962766158976
+  },
+  "g2_gate": {
+    "selected_scale": 0.0,
+    "validation_loss": 1.9367487766430713e-05,
+    "candidates": [
+      {
+        "scale": 0.0,
+        "validation_loss": 1.9367487766430713e-05
+      },
+      {
+        "scale": 0.25,
+        "validation_loss": 1.9426446669967845e-05
+      },
+      {
+        "scale": 0.5,
+        "validation_loss": 1.970677840290591e-05
+      },
+      {
+        "scale": 0.75,
+        "validation_loss": 2.0208473870297894e-05
+      },
+      {
+        "scale": 1.0,
+        "validation_loss": 2.0931540348101407e-05
+      }
+    ]
+  },
+  "adapter_tta": null
+}
